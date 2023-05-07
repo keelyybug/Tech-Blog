@@ -15,9 +15,9 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: 'TECH BLOG secret',
   cookie: {
-    maxAge: 300000,
+    maxAge: 300000,//! look up what is inside here
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
@@ -36,11 +36,11 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));//! false
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening on port ${PORT}!'));
 });
