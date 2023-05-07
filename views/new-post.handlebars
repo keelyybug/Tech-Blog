@@ -1,14 +1,15 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+<div class="card">
+  <h3 class="card-header">Create New Post</h3>
+  <form class="card-body new-post-form" id="new-post-form">
+    <label for="post-title" class="form-label">Title</label>
+    <input type="text" id="post-title" name="post-title" class="form-input"/>
+
+    <label class="form-label" for="post-content">Content</label>
+    <input id="content" name="post-content" class="form-input" />
+
+    <button type="submit" class="btn">Create</button>
+  </form>
 </div>
+
+<script src="/javascript/add-post.js"></script>
+
