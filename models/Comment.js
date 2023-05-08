@@ -16,7 +16,7 @@ class Comment extends Model {}
       allowNull: false,
     },
     date_created: {
-      type: DataTypes.DATEONLY,//?look at post.js comment
+      type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
@@ -37,7 +37,7 @@ class Comment extends Model {}
   },
   {
     sequelize,
-    timestamps: false,//? maybe not needed
+    timestamps: false,//? maybe
     freezeTableName: true,
     underscored: true,
     modelName: 'comment',
