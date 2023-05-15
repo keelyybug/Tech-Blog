@@ -6,9 +6,9 @@
     <form class="card-body comment-form" id="comment-form">
 
         <label class="form-label">Comment</label>
-        <input id="comment" name="comment-body" class="form-input" />
+        <textarea id="comment-body" name="comment-body" class="form-input"></textarea>
 
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" id="new-comment-form" class="btn">Submit</button>
     </form>
 </div>
 {{/if}}
@@ -16,5 +16,5 @@
 {{> comments post.comments}}
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="../js/comment.js"></script>
 {{/if}}

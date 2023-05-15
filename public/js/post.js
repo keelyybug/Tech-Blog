@@ -1,9 +1,9 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const postTitle = document.querySelector('#post_title').value.trim();
-  const postContent = document.querySelector('#post_content').value.trim();
-  const dateCreated = document.querySelector('#date_created').value.trim();
+  const postTitle = document.querySelector('#post-title').value.trim();
+  const postContent = document.querySelector('#post-content').value.trim();
+  const dateCreated = document.querySelector('#date-created').value.trim();
 
   if (postTitle && postContent && dateCreated) {
     const response = await fetch(`/api/projects`, {
