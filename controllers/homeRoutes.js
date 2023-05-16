@@ -8,14 +8,14 @@ const sequalize = require('../config/connection');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include:{User},//!should this be in [] took from mini project
+      include:[User],//!should this be in [] took from mini project
     });
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('all-posts', { //!is this before or after logged in
+    res.render('homepage', { //!is this before or after logged in
       posts, 
       logged_in: req.session.logged_in 
     });
@@ -59,7 +59,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('ost', {
+    res.render('post', {
       ...user,
       logged_in: true
     });
